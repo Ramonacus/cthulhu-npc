@@ -9,3 +9,15 @@ class Gender:
         self.expression = weighted_attr.generate(
             ['cis', 'trans'],
             [99.4, 0.6])(expression)
+
+    @property
+    def pronoun(self):
+        return "he" if self.name == 'male'\
+            else "she" if self.name == 'female'\
+            else "they"
+
+    @property
+    def possessive_pronoun(self):
+        return "his" if self.name == 'male'\
+            else "her" if self.name == 'female'\
+            else "their"

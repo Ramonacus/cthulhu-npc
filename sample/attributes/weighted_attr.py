@@ -14,13 +14,3 @@ def generate(options, w):
         return name
 
     return callback
-
-
-gender = generate(
-    ['non-binary', 'trans female', 'trans male', 'female', 'male'],
-    [0.2, 0.3, 0.3, 49.6, 49.6])
-
-
-sexuality = generate(
-    ['heterosexual', 'homosexual', 'bisexual'],
-    [90, 8, 2])

@@ -1,11 +1,10 @@
-from attributes import gender, sexuality
-import name_generator
+from attributes import gender, sexuality, name_generator
 
 
 class NPC:
     def __init__(self):
-        self.gender = gender()
-        self.sexuality = sexuality()
+        self.gender = gender.gender()
+        self.sexuality = sexuality.sexuality()
         self.name = name_generator.generate(self.gender)
 
 

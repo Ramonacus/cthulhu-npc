@@ -1,6 +1,11 @@
 from attributes import weighted_attr
 
 
-gender = weighted_attr.generate(
-    ['non-binary', 'trans female', 'trans male', 'female', 'male'],
-    [0.2, 0.3, 0.3, 49.6, 49.6])
+class Gender:
+    def __init__(self, name=None, expression=None):
+        self.name = weighted_attr.generate(
+            ['non-binary', 'female', 'male'],
+            [0.2, 49.8, 49.8])(name)
+        self.expression = weighted_attr.generate(
+            ['cis', 'trans'],
+            [99.4, 0.6])(expression)

@@ -146,7 +146,7 @@ names = {
         'Patricia',
         'Montserrat',
         'Andrea',
-        'Rocóo',
+        'Rocío',
         'Mónica',
         'Rosa',
         'Alicia',

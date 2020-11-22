@@ -1,20 +1,3 @@
-import random
-
-
-def generate(genderName):
-    if names[genderName] is None:
-        zippedList = zip(names.male, names.female)
-        nameList = [val for pair in zippedList for val in pair]
-    else:
-        nameList = names[genderName]
-
-    min_weight = 100
-    max_weight = len(nameList) + min_weight
-    first = random.choices(nameList, range(max_weight, min_weight, -1))[0]
-
-    return first
-
-
 names = {
     'male': [
         'Antonio',
@@ -221,3 +204,106 @@ names = {
         'María Cristina'
     ]
 }
+
+surnames = [
+    'García',
+    'Rodríguez',
+    'González',
+    'Fernández',
+    'López',
+    'Martínez',
+    'Sánchez',
+    'Pérez',
+    'Gémez',
+    'Martín',
+    'Jiménez',
+    'Ruiz',
+    'Hernández',
+    'Díaz',
+    'Moreno',
+    'Muñoz',
+    'Álvarez',
+    'Romero',
+    'Alonso',
+    'Gutiérrez',
+    'Navarro',
+    'Torres',
+    'Domínguez',
+    'Vázquez',
+    'Ramos',
+    'Gil',
+    'Ramírez',
+    'Serrano',
+    'Blanco',
+    'Molina',
+    'Morales',
+    'Suárez',
+    'Ortega',
+    'Delgado',
+    'Castro',
+    'Ortiz',
+    'Marín',
+    'Rubio',
+    'Sanz',
+    'Núñez',
+    'Medina',
+    'Iglesias',
+    'Cortes',
+    'Castillo',
+    'Garrido',
+    'Santos',
+    'Lozano',
+    'Guerrero',
+    'Cano',
+    'Prieto',
+    'Mendez',
+    'Cruz',
+    'Flores',
+    'Herrera',
+    'Gallego',
+    'Márquez',
+    'León',
+    'Peña',
+    'Calvo',
+    'Cabrera',
+    'Vidal',
+    'Campos',
+    'Vega',
+    'Fuentes',
+    'Carrasco',
+    'Reyes',
+    'Díez',
+    'Caballero',
+    'Nieto',
+    'Aguilar',
+    'Santana',
+    'Pascual',
+    'Herrero',
+    'Montero',
+    'Hidalgo',
+    'Giménez',
+    'Lorenzo',
+    'Ibáñez',
+    'Vargas',
+    'Santiago',
+    'Durán',
+    'Ferrer',
+    'Benítez',
+    'Mora',
+    'Arias',
+    'Vicente',
+    'Carmona',
+    'Crespo',
+    'Roman',
+    'Soto',
+    'Pastor',
+    'Velasco',
+    'Sáez',
+    'Rojas',
+    'Moya',
+    'Parra',
+    'Soler',
+    'Bravo',
+    'Gallardo',
+    'Esteban'
+]

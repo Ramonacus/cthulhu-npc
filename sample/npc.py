@@ -4,7 +4,7 @@ from attributes import gender, sexuality, name
 
 
 # TODO fix this quirk. Create class Campaign? World?
-campaignDate = datetime.date(1920, 12, 31)
+campaignDate = datetime.date(1934, 12, 31)
 
 
 class NPC:

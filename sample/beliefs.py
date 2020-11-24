@@ -23,10 +23,26 @@ belief_list = [
 ]
 
 
+value_to_group = {
+    5: 'is devoted to',
+    4: 'loves',
+    3: 'loves',
+    2: 'likes',
+    1: 'likes',
+    0: 'is neutral to',
+    -1: 'dislikes',
+    -2: 'dislikes',
+    -3: 'hates',
+    -4: 'hates',
+    -5: 'totally abhors'
+}
+
+
 class Belief:
     def __init__(self, name, value=0):
         self.value = max(min_belief_value, min(max_belief_value, value))
         self.name = name
+        self.group = value_to_group[self.value]
 
 
 class BeliefSystem:

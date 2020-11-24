@@ -1,8 +1,9 @@
-import numpy.random
-
+import numpy
+import math
 
 max_belief_value = 5
 min_belief_value = -max_belief_value
+belief_sigma = math.sqrt(3)
 belief_list = [
     "religion",
     "tradition",
@@ -30,7 +31,11 @@ class Belief:
 
 class BeliefSystem:
     def __init__(self):
-        self.beliefs = map(
-            lambda b: Belief(b, round(numpy.random.normal(0, max_belief_value / 2))),
+        self.beliefs = list(map(
+            lambda b: Belief(b, round(numpy.random.normal(0, belief_sigma))),
             belief_list
-        )
+        ))
+        self.sort(True)
+
+    def sort(self, rev=False):
+        self.beliefs.sort(key=lambda e: e.value, reverse=rev)

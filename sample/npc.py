@@ -1,6 +1,7 @@
 import datetime
 import random
 from attributes import gender, sexuality, name
+import beliefs
 
 
 # TODO fix this quirk. Create class Campaign? World?
@@ -22,6 +23,9 @@ class NPC:
         ageRange = random.randrange(365.25 * 80)
         self.birthday = currentDate - datetime.timedelta(days=ageRange)
 
+        # Belief system
+        self.beliefSystem = beliefs.BeliefSystem()
+
     @property
     def age(self):
         dob = self.birthday
@@ -33,3 +37,5 @@ class NPC:
             # The date of birth is later during the year, decrease the age by 1
             years -= 1
         return years
+
+

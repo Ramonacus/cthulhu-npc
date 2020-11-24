@@ -3,7 +3,7 @@ import math
 from attributes.data.names import names, surnames
 
 
-def generate(genderName):
+def generate_name(genderName):
     if names[genderName] is None:
         zippedList = zip(names.male, names.female)
         nameList = [val for pair in zippedList for val in pair]

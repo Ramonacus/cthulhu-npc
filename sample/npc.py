@@ -1,6 +1,6 @@
 import datetime
 import random
-from attributes import gender, sexuality, name
+import attributes
 import beliefs
 
 
@@ -14,9 +14,9 @@ class NPC:
 
     def __init__(self):
         # Define sexual traits and name
-        self.gender = gender.Gender()
-        self.sexuality = sexuality.Sexuality()
-        self.name = name.generate(self.gender.name)
+        self.gender = attributes.Gender()
+        self.sexuality = attributes.Sexuality()
+        self.name = attributes.generate_name(self.gender.name)
 
         # Define age in relationship with campaign setting
         currentDate = campaignDate or datetime.date.today()

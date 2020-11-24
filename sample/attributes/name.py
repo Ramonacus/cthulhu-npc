@@ -1,6 +1,6 @@
 import random
 import math
-from attributes.names_data import names, surnames
+from attributes.data.names import names, surnames
 
 
 def generate(genderName):

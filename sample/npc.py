@@ -37,5 +37,3 @@ class NPC:
             # The date of birth is later during the year, decrease the age by 1
             years -= 1
         return years
-
-

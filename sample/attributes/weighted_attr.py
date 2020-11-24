@@ -1,6 +1,7 @@
 import random
 
-# Returns a function to randomly select an attribute from a list based on weights
+
+# Returns a function to select an attribute from a list based on weights
 def generate(options, w):
     if len(options) != len(w):
         raise Exception("The number of weights does not match the population")

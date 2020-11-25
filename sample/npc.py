@@ -8,6 +8,7 @@ import beliefs
 campaignDate = datetime.date(1934, 12, 31)
 currentDate = campaignDate or datetime.date.today()
 
+
 class NPC:
     """ Procedurally generates a NPC.
     Should add config to everything in the future. """

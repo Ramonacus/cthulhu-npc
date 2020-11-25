@@ -14,6 +14,13 @@ def groupBeliefs(group):
     return regroup[0] if len(regroup) == 1\
         else ' and '.join([', '.join(regroup[:-1]), regroup[-1]])
 
+""""
 print(f"{npc.gender.pronoun.capitalize()} has the following beliefs:")
 for key, group in groupby(npc.beliefSystem.beliefs, lambda x: x.group):
     print(f"* {key} {groupBeliefs(group)}")
+
+print(npc.beliefSystem.beliefs[0].description % (npc.gender.pronoun.capitalize()))
+"""
+
+for belief in npc.beliefSystem.beliefs:
+    print('Belief %s level is %1.2f' % (belief.name, belief.value))

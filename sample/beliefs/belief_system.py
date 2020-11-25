@@ -20,13 +20,16 @@ belief_list = [
     "honesty",
     "independence"
 ]
-belief_sigma = math.sqrt(3)
+# Make -5.5 and 5 three standard deviations away
+# This way 99.73% of values will be between those two
+mean = 0
+stdev = 5.5/3
 
 
 class BeliefSystem:
     def __init__(self):
         self.beliefs = list(map(
-            lambda b: Belief(b, round(numpy.random.normal(0, belief_sigma))),
+            lambda b: Belief(b, numpy.random.normal(mean, stdev)),
             belief_list
         ))
         self.sort(True)

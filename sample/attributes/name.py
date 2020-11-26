@@ -24,5 +24,6 @@ class Name:
         self.first = first
         self.other = list(argv)
 
+    @property
     def full(self):
         return f"{self.first} {' '.join(self.other)}"

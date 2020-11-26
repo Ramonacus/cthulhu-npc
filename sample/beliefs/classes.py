@@ -1,24 +1,6 @@
 max_belief_val = 5
 min_belief_val = -max_belief_val
 
-"""
-"religion",
-"tradition",
-"wealth",
-"power",
-"knowledge",
-"homeland",
-"peace",
-"justice",
-"law",
-"sex",
-"romance",
-"family",
-"friendship",
-"honesty",
-"independence"
-"""
-
 
 class Belief:
     def __init__(self, name, value):
@@ -42,6 +24,7 @@ class Belief:
         else:
             return 'abhors'
 
+    # TODO In the future, enable custom descriptions for each belief
     @property
     def description(self):
         return f"%s {self.group} {self.name}"

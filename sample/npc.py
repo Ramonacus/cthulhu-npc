@@ -2,6 +2,7 @@ import datetime
 import random
 import attributes
 import beliefs
+from relationship import Relationship
 
 
 # TODO fix this quirk. Create class Campaign? World?
@@ -17,7 +18,7 @@ class NPC:
         gender_name=None,
         gender_expression=None,
         sexuality=None,
-        max_age=80,
+        max_age=60,
         min_age=12):
         # Define sexual traits and name
         self.gender = attributes.Gender(name=gender_name, expression=gender_expression)
@@ -34,6 +35,9 @@ class NPC:
         # Belief system
         self.beliefSystem = beliefs.BeliefSystem()
 
+        # Relationships starts as an empty list
+        self.relationships = []
+
     # Get the age for the current campaignDate
     @property
     def age(self):
@@ -46,3 +50,19 @@ class NPC:
             # The date of birth is later during the year, decrease the age by 1
             years -= 1
         return years
+
+    def generate_family_at_birth(self):
+        # For now I will settle for traditional families
+        # TODO Monoparental? Homosexual with adopted kids?
+        mother = NPC(gender_name='female', min_age=self.age+16, max_age=self.age+44)
+        mother.name.other[0] = self.name.other[1]
+        self.relationships.append(Relationship(mother, 'parent'))
+        mother.relationships.append(Relationship(self, 'offspring'))
+
+        father = NPC(gender_name='male', min_age=self.age+16, max_age=self.age+44)
+        father.name.other[0] = self.name.other[0]
+        self.relationships.append(Relationship(father, 'parent'))
+        father.relationships.append(Relationship(self, 'offspring'))
+
+    def get_relationships(self, type):
+        return filter(lambda x: x.type, self.relationships)

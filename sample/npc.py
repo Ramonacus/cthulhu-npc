@@ -13,14 +13,22 @@ class NPC:
     """ Procedurally generates a NPC.
     Should add config to everything in the future. """
 
-    def __init__(self):
+    def __init__(self,
+        gender_name=None,
+        gender_expression=None,
+        sexuality=None,
+        max_age=80,
+        min_age=12):
         # Define sexual traits and name
-        self.gender = attributes.Gender()
-        self.sexuality = attributes.Sexuality()
+        self.gender = attributes.Gender(name=gender_name, expression=gender_expression)
+        self.sexuality = attributes.Sexuality(sexuality)
         self.name = attributes.generate_name(self.gender.name)
 
         # Define age in relationship with campaign setting
-        ageRange = random.randrange(365.25 * 80)
+        days_per_year = 365.25
+        ageRange = random.randrange(
+            round(days_per_year * min_age),
+            round(days_per_year * (max_age + 1)))
         self.birthday = currentDate - datetime.timedelta(days=ageRange)
 
         # Belief system
